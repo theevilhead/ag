@@ -3,25 +3,25 @@ import time
 import urllib2
 GPIO.setmode(GPIO.BCM)
 
-url = 'http://localhost:8080/listen.php'
+url = 'http://139.59.6.47/gen1.php'
 
 temp_pin = 14
 hum_pin = 15
 moist_pin = 18
 
-GPIO.setup(a_pin,GPIO.IN)
-GPIO.setup(14,GPIO.OUT)
+GPIO.setup(14,GPIO.IN)
+GPIO.setup(15,GPIO.IN)
+GPIO.setup(18,GPIO.IN)
+
 while True:
 	# Read temperature
-	i_1 = GPIO.input(temp_pin)
-	# Read humidity
-	i_2 = GPIO.input(hum_pin)
+	i_1 = str(GPIO.input(temp_pin))
 	# Read moisture
-	i_3 = GPIO.input(moist_pin)
-	time.sleep(60000)
+	i_3 = str(GPIO.input(moist_pin))
+	time.sleep(5)
 	# Call the url endpoint
 
-	req = urllib2.Request(url)
+	req = urllib2.Request(url+'?auth_id=zxcw&s_1='+i_1+'&s_2='+i_3)
 	f = urllib2.urlopen(req)
-
+	print("Inserted")
 
