@@ -21,7 +21,7 @@ while True:
 	time.sleep(5)
 	# Call the url endpoint
 
-	req = urllib2.Request(url+'?auth_id=zxcw&s_1='+i_1+'&s_2='+i_3)
+	req = urllib2.Request(url+'?auth_id=znjMmmVtdE2l&s_1='+i_1+'&s_2='+i_3)
 	f = urllib2.urlopen(req)
 	print("Inserted")
 

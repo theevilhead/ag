@@ -7,7 +7,7 @@ $con = new mysqli("localhost","root","akshay","sensor_data");
 
 $d = json_encode($d);
 
-$qry  = sprintf("INSERT IMTO sensor_data (uid,auth_id,sdata,sdate,stime) VALUES(56789,"znjMki9sdjer44",CURRENT_DATE,CURRENT_TIME));
+$qry  = sprintf('INSERT INTO sensor_data (uid,auth_id,sdata,sdate,stime) VALUES(56789,"znjMki9sdjer44',CURRENT_DATE,CURRENT_TIME));
 $res = $con->query($qry);
 
 
